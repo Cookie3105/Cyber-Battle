@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f3ed">
+<title>Cyber Battle — Red Team vs Blue Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+<div class="frame">
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">⌘</span> Cyber Battle</div>
+  <nav class="nav"><a href="#scenario">Scenario</a><a href="#battle">Battlefield</a><a href="#rules">Rules</a><a href="#history">Log</a></nav>
+  <button class="top-action" id="topStart">Start simulation ↗</button>
+</header>
+
+<section class="screen active" id="home">
+  <div class="hero" id="scenario">
+    <div class="hero-copy">
+      <span class="eyebrow">CYBER RANGE / TRAINING SIMULATION</span>
+      <h1><span class="red-word">Red Team</span><span>vs.</span><span class="blue-word">Blue Team</span></h1>
+      <p class="lead">Una simulazione strategica di attacco e difesa informatica. Il Red Team mette alla prova le vulnerabilità di TechCompany; il Blue Team rileva le minacce, limita i danni e protegge i dati dei clienti.</p>
+      <div class="actions"><button class="btn primary" id="startBtn">Scegli la tua squadra ↗</button><a class="btn" href="#rules">Leggi le regole ↓</a></div>
+      <p class="notice">ESERCITAZIONE DIDATTICA · AMBIENTE SIMULATO · NESSUN ATTACCO REALE</p>
+    </div>
+    <div class="hero-art">
+      <div class="art-grid"></div>
+      <div class="terminal-card">
+        <div class="terminal-head"><span>TECHCOMPANY.SOC / LIVE</span><span class="terminal-dots"><i></i><i></i><i></i></span></div>
+        <div class="terminal-body">
+          <div class="dim">$ cyber-battle --scenario 01</div>
+          <div><span class="hot">RED TEAM</span> <span class="dim">→</span> identify attack surface</div>
+          <div><span class="cool">BLUE TEAM</span> <span class="dim">→</span> detect &amp; contain</div>
+          <div class="dim">--------------------------------</div>
+          <div>system.integrity = <span class="hot">100%</span></div>
+          <div>customer_data = <span class="cool">PROTECTED</span></div>
+          <div>mission.status = IN PROGRESS_</div>
+        </div>
+        <div class="terminal-foot"><span>5 ROUNDS</span><span>RED / BLUE EXERCISE</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="status-strip">
+    <div class="strip-label">Mission<br>briefing ↘</div>
+    <div class="metric"><b>05</b><span>Turni<br>di gioco</span></div>
+    <div class="metric"><b>60%</b><span>Soglia<br>di sicurezza</span></div>
+    <div class="metric"><b>02</b><span>Squadre<br>in competizione</span></div>
+    <div class="metric"><b>100%</b><span>Simulazione<br>didattica</span></div>
+  </div>
+  <section class="section" id="rules">
+    <div class="section-heading"><h2>Come funziona la missione</h2><span class="kicker">Briefing / 01—03</span></div>
+    <div class="rules-grid">
+      <article class="rule"><b>01 / Red Team</b><p>Sceglie una carta attacco per turno e tenta di compromettere dipendenti, server, rete o dati. Gli attacchi non descrivono procedure operative reali.</p></article>
+      <article class="rule"><b>02 / Blue Team</b><p>Ha 30 secondi per scegliere una contromisura. Ogni difesa contrasta specifiche minacce; una difesa non pertinente non annulla il danno.</p></article>
+      <article class="rule"><b>03 / Esito</b><p>La risoluzione modifica l'integrità del sistema. Dopo ogni turno si verifica un evento casuale. Il Blue vince se l'integrità finale è almeno 60%.</p></article>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-heading"><h2>Seleziona il tuo ruolo</h2><span class="kicker">Player vs. AI</span></div>
+    <div class="role-grid">
+      <button class="role-card red-role" data-role="red"><h3>Red Team / Attacco</h3><p>Sei il penetration tester incaricato di simulare le minacce e mettere alla prova la resilienza dell'infrastruttura.</p><span class="choose">Gioca come Red ↗</span></button>
+      <button class="role-card blue-role" data-role="blue"><h3>Blue Team / Difesa</h3><p>Sei parte del Security Operations Center. Devi riconoscere gli attacchi e contenere l'impatto prima che i dati siano compromessi.</p><span class="choose">Gioca come Blue ↗</span></button>
+    </div>
+    <p class="notice">L'avversario è gestito dall'intelligenza artificiale del gioco. Le scelte sono automatiche e non richiedono connessione a servizi esterni.</p>
+  </section>
+</section>
+
+<section class="screen" id="game">
+  <div class="section" id="battle">
+    <div class="section-heading"><div><span class="eyebrow">LIVE EXERCISE / TECHCOMPANY</span><h2 style="margin-top:12px">Cyber battlefield</h2></div><div><span class="round-pill" id="roundBadge">ROUND 01 / 05</span></div></div>
+    <div class="game-layout">
+      <main>
+        <section class="board" id="board">
+          <div class="board-top"><h3>Integrità dell'infrastruttura</h3><span class="kicker">SECURITY STATUS</span></div>
+          <div class="integrity"><span>System integrity / soglia 60%</span><strong id="integrityValue">100%</strong></div>
+          <div class="bar"><div class="bar-fill" id="integrityBar"></div><div class="threshold"></div></div>
+          <div class="bar-legend"><span>0% / Compromesso</span><span>60% / Soglia</span><span>100% / Integro</span></div>
+          <div class="attack-path" aria-label="Percorso dell'attacco">
+            <div class="node" id="node-staff"><span class="node-icon">01</span>Dipendenti<small>Human layer</small></div>
+            <div class="node" id="node-web"><span class="node-icon">02</span>Server web<small>Perimeter</small></div>
+            <div class="node" id="node-net"><span class="node-icon">03</span>Rete interna<small>Internal net</small></div>
+            <div class="node" id="node-data"><span class="node-icon">04</span>Dati clienti<small>Critical assets</small></div>
+          </div>
+          <div class="turn-slots">
+            <div class="slot empty" id="attackSlot"><div><div class="slot-title">01 / Attack vector</div>In attesa dell'attacco</div></div>
+            <div class="slot empty" id="defenseSlot"><div><div class="slot-title">02 / Countermeasure</div>In attesa della difesa</div></div>
+            <div class="slot empty" id="eventSlot"><div><div class="slot-title">03 / Random event</div>Evento di fine turno</div></div>
+          </div>
+          <div class="dice-row">
+            <div class="die red-die" id="dieOne">–</div><div class="die blue-die" id="dieTwo">–</div><span class="dice-result" id="diceResult">Dadi in attesa</span>
+            <button class="btn turn-action hidden" id="continueBtn">Lancia i dadi ↗</button>
+          </div>
+        </section>
+        <section class="hand-panel">
+          <div class="hand-top"><h3 id="handTitle">La tua mano</h3><span class="kicker" id="handCount">— carte</span></div>
+          <div class="hand" id="hand"></div>
+          <div class="actions" style="margin-bottom:0"><button class="btn hidden" id="passBtn">Nessuna difesa / Passa</button></div>
+        </section>
+      </main>
+      <aside class="sidebar">
+        <section class="sidebox phase-box"><h3>Mission control</h3><div class="phase-name" id="phaseName">Preparazione</div><p class="phase-copy" id="phaseCopy">La simulazione sta per iniziare.</p><div class="timer"><span class="kicker">Tempo risposta Blue</span><strong id="timerValue">30s</strong></div></section>
+        <section class="sidebox"><h3>Battle log / <span id="logCount">00</span></h3><ol class="log" id="log"><li>In attesa dell'avvio della simulazione.</li></ol></section>
+        <section class="sidebox"><h3>Scoreboard</h3><div style="display:flex;justify-content:space-between;font-size:10px;padding:7px 0;border-bottom:1px solid #ddd"><b>RED / Danno</b><strong id="redScore">0%</strong></div><div style="display:flex;justify-content:space-between;font-size:10px;padding:7px 0"><b>BLUE / Danno evitato</b><strong id="blueScore">0%</strong></div><p class="notice" style="margin:8px 0 0">Il recupero dell'integrità è conteggiato separatamente dal danno evitato.</p></section>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="result">
+  <div class="section">
+    <div class="result-hero" id="resultHero"><span class="eyebrow">MISSION REPORT / COMPLETE</span><h2 id="resultTitle">Mission complete</h2><p id="resultText"></p></div>
+    <div class="section-heading" style="margin-top:28px"><h2>Performance report</h2><span class="kicker">After action review</span></div>
+    <div class="board">
+      <table class="stats">
+        <thead><tr><th>Indicatore</th><th>Red Team</th><th>Blue Team</th></tr></thead>
+        <tbody>
+          <tr><td>Carte giocate</td><td id="statRedCards">0</td><td id="statBlueCards">0</td></tr>
+          <tr><td>Attacchi riusciti / blocchi totali</td><td id="statSuccess">0</td><td id="statBlocks">0</td></tr>
+          <tr><td>Danno inflitto / evitato</td><td id="statDamage">0%</td><td id="statPrevented">0%</td></tr>
+          <tr><td>Integrità recuperata</td><td>—</td><td id="statHealing">0%</td></tr>
+          <tr><td>Tempo medio di risposta</td><td>—</td><td id="statTime">—</td></tr>
+          <tr><td>Eventi casuali attivati</td><td colspan="2" id="statEvents">0</td></tr>
+        </tbody>
+      </table>
+      <p class="notice" id="gradeText"></p>
+      <div class="actions"><button class="btn primary" id="replayBtn">Nuova simulazione ↗</button><button class="btn" id="homeBtn">Torna alla home</button></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><span class="brand-mini">⌘ CYBER BATTLE</span><span>RED TEAM / BLUE TEAM · DIDACTIC CYBER RANGE</span><span>Cookie3105 © 2026</span></footer>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
