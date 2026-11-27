@@ -567,11 +567,3 @@ The project could be extended with:
 - additional animations and visual feedback.
 
 These features are possible future extensions and are not part of the current version.
-
----
-
-## License
-
-This project was created for educational purposes as part of a cybersecurity exercise focused on **Red Team vs Blue Team** dynamics.
-
-Before distributing the project publicly, add an explicit license to the repository if needed.
