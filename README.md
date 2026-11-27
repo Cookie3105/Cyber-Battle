@@ -33,7 +33,6 @@ Cyber Battle is a small web game built with **vanilla HTML, CSS, and JavaScript*
 - [Accessibility and Responsive Design](#accessibility-and-responsive-design)
 - [Troubleshooting](#troubleshooting)
 - [Possible Future Improvements](#possible-future-improvements)
-- [License](#license)
 
 ---
 
