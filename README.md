@@ -1,8 +1,6 @@
 # Cyber-Battle
-```text
-A browser-based Red Team vs Blue Team cybersecurity game featuring strategic cards, attack simulations,
-defensive tactics, random events, and interactive gameplay. Built with HTML, CSS, and JavaScript.
-```
+
+> A browser-based Red Team vs Blue Team cybersecurity game featuring strategic cards, attack simulations, defensive tactics, random events, and interactive gameplay. Built with HTML, CSS, and JavaScript.
 
 # Cyber Battle — Red Team vs Blue Team
 
